@@ -13,6 +13,8 @@ module.exports = withMT({
     colors: {
       'primary-dark-purple': '#271340',
       'secondary-purple': '#8d45d0',
+      'purple-bg': '#1B2452',
+      'paragraph': "#FFFFFF5C"
     },
   },
   plugins: [],
