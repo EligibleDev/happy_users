@@ -10,6 +10,10 @@ module.exports = withMT({
   ],
   theme: {
     extend: {},
+    colors: {
+      'primary-dark-purple': '#271340',
+      'secondary-purple': '#8d45d0',
+    },
   },
   plugins: [],
 });

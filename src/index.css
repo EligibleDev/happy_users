@@ -1,3 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --primary-dark-purple: #271340;
+    --secondary-purple: #8d45d0;
+}
+
+html {
+    font-family: "Manrope", sans-serif;
+    color: var(--primary-dark-purple);
+}
+
+.active {
+    color: var(--secondary-purple);
+}
