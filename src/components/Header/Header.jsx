@@ -3,16 +3,18 @@ import logo from "../../assets/images/logo.png";
 import { navLinks } from "../../utils/utils";
 import Button from "../Button/Button";
 import { useState } from "react";
-import { Drawer } from "@material-tailwind/react";
+import { Avatar, Drawer } from "@material-tailwind/react";
 import { FaBarsStaggered } from "react-icons/fa6";
 import MobileMenu from "./MobileMenu";
 import Headroom from "react-headroom";
+import useAuth from "../../hooks/useAuth/useAuth";
 
 const Header = () => {
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
     const closeMobileMenu = () => setOpenMobileMenu(false);
+    const { user } = useAuth();
 
-    // todo: use headroom for the animation
+    console.log(user)
 
     return (
         <>
@@ -33,7 +35,15 @@ const Header = () => {
                                 </NavLink>
                             ))}
                         </ul>
-                        <Button className="hidden lg:block">sign in</Button>
+
+                        {user ? (
+                            <Avatar src={user?.photoURL} />
+                        ) : (
+                            <Link to="/login">
+                                <Button className="hidden lg:block">sign in</Button>
+                            </Link>
+                        )}
+
                         <FaBarsStaggered
                             size={26}
                             className="block lg:hidden"

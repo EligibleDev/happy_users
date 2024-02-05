@@ -3,8 +3,11 @@ import logo from "../../assets/images/logo.png";
 import { navLinks } from "../../utils/utils";
 import { Link, NavLink } from "react-router-dom";
 import Button from "../Button/Button";
+import useAuth from "../../hooks/useAuth/useAuth";
 
 const MobileMenu = ({ close }) => {
+    const { user, logout } = useAuth();
+
     return (
         <nav className="h-full flex flex-col justify-between">
             <div className="space-y-3">
@@ -23,7 +26,15 @@ const MobileMenu = ({ close }) => {
                 </ul>
             </div>
 
-            <Button>Sign In</Button>
+            {user ? (
+                <span onClick={logout}>
+                    <Button>Logout</Button>
+                </span>
+            ) : (
+                <Link to="/login">
+                    <Button>Sign In</Button>
+                </Link>
+            )}
         </nav>
     );
 };

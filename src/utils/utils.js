@@ -8,22 +8,9 @@ export const navLinks = [
             link: "/",
       },
       {
-            label: "About",
-            link: "/about",
-      },
-      {
-            label: "Services",
-            link: "/services",
-      },
-      {
-            label: "Contact",
-            link: "/contact",
-      },
-      {
-            label: "Vendors",
-            link: "/vendors",
-      },
-]
+            label: "Manage Users",
+            link: "/manage_users",
+      },]
 
 export const contactInfos = [
       {
