@@ -1,7 +1,7 @@
 import { RxCross2 } from "react-icons/rx";
 import logo from "../../assets/images/logo.png";
 import { navLinks } from "../../utils/utils";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Button from "../Button/Button";
 
 const MobileMenu = ({ close }) => {
@@ -9,7 +9,9 @@ const MobileMenu = ({ close }) => {
         <nav className="h-full flex flex-col justify-between">
             <div className="space-y-3">
                 <div className="flex justify-between">
-                    <img className="w-24" src={logo} alt="Alpaago Logo" />
+                    <Link to="/">
+                        <img className="w-24" src={logo} alt="Alpaago Logo" />
+                    </Link>
                     <RxCross2 onClick={close} size={32} />
                 </div>
                 <ul className="flex flex-col gap-3">

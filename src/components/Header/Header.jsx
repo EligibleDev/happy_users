@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import { navLinks } from "../../utils/utils";
 import Button from "../Button/Button";
@@ -15,11 +15,13 @@ const Header = () => {
     // todo: use headroom for the animation
 
     return (
-        <> 
+        <>
             <Headroom>
                 <header className="container bg-transparent mx-auto">
                     <nav className="flex justify-between items-center py-4 px-4 xl:px-0">
-                        <img className="w-20" src={logo} alt="Alpaago logo" />
+                        <Link to="/">
+                            <img className="w-20" src={logo} alt="Alpaago logo" />
+                        </Link>
                         <ul className="hidden lg:flex gap-8 font-semibold ">
                             {navLinks.map((item) => (
                                 <NavLink
