@@ -8,13 +8,12 @@ import { FaBarsStaggered } from "react-icons/fa6";
 import MobileMenu from "./MobileMenu";
 import Headroom from "react-headroom";
 import useAuth from "../../hooks/useAuth/useAuth";
+import ProfileMenu from "../ProfileMenu/ProfileMenu";
 
 const Header = () => {
     const [openMobileMenu, setOpenMobileMenu] = useState(false);
     const closeMobileMenu = () => setOpenMobileMenu(false);
     const { user } = useAuth();
-
-    console.log(user)
 
     return (
         <>
@@ -35,14 +34,15 @@ const Header = () => {
                                 </NavLink>
                             ))}
                         </ul>
-
-                        {user ? (
-                            <Avatar src={user?.photoURL} />
-                        ) : (
-                            <Link to="/login">
-                                <Button className="hidden lg:block">sign in</Button>
-                            </Link>
-                        )}
+                        <span className="hidden lg:block">
+                            {user ? (
+                                <ProfileMenu />
+                            ) : (
+                                <Link to="/login">
+                                    <Button>sign in</Button>
+                                </Link>
+                            )}
+                        </span>
 
                         <FaBarsStaggered
                             size={26}

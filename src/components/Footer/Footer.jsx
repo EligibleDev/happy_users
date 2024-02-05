@@ -2,7 +2,7 @@ import { contactInfos } from "../../utils/utils";
 
 const Footer = () => {
     return (
-        <footer className="bg-purple-bg rounded-t-3xl text-white px-8 xl:px-0">
+        <footer className="bg-purple-bg text-white px-8 xl:px-0">
             <div className="max-w-screen-xl mx-auto flex flex-col gap-8 sm:flex-row justify-between items-end py-24">
                 <div className="w-full sm:w-3/5 flex flex-col gap-2">
                     <h1 className="text-3xl lg:text-4xl font-bold">

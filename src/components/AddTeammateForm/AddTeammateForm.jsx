@@ -4,20 +4,22 @@ import useAuth from "../../hooks/useAuth/useAuth";
 import { postTeammate } from "../../api/users";
 import toast from "react-hot-toast";
 
-const AddTeammateForm = () => {
+const AddTeammateForm = ({ refetch }) => {
     const { user } = useAuth();
 
     const handleAddTeammate = async (e) => {
         e.preventDefault();
-        const currentTime = new Date();
+        const addedTime = new Date();
         const name = e.target.name.value;
         const toastId = toast.loading("Adding User...");
-        const teammate = { name, currentTime, active: true, leader: user?.email };
+        const teammate = { name, addedTime, active: true, leader: user?.email };
 
         try {
             const res = await postTeammate(teammate);
             console.log(res);
             toast.success("User added successfully", { id: toastId });
+            e.target.name.value = "";
+            refetch();
         } catch (error) {
             console.log(error);
             toast.error(error.message);
@@ -26,7 +28,7 @@ const AddTeammateForm = () => {
 
     return (
         <form
-            className="w-96 flex items-center justify-center gap-2"
+            className="w-96 mx-auto my-8 flex items-center justify-center gap-2"
             onSubmit={handleAddTeammate}
         >
             <Input

@@ -11,6 +11,24 @@
 html {
     font-family: "Manrope", sans-serif;
     color: var(--primary-dark-purple);
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: var(--secondary-purple);
+    color: #fff
+}
+
+::-webkit-scrollbar {
+    width: 0.9vw;
+    background: #1B2452;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-purple);
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6e399f;
 }
 
 .active {

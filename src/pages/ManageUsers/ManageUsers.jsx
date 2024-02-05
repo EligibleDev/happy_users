@@ -1,10 +1,11 @@
 import AddTeammateForm from "../../components/AddTeammateForm/AddTeammateForm";
+import TeammateTable from "../../components/TeammateTable/TeammateTable";
 
 const ManageUsers = () => {
     return (
-        <div className="w-full min-h-screen flex justify-center items-center">
-            <AddTeammateForm />
-        </div>
+        <>
+            <TeammateTable />
+        </>
     );
 };
 
